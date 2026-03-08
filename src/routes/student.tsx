@@ -1,9 +1,9 @@
 import { createFileRoute, Link, Outlet, useLocation } from '@tanstack/react-router';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { 
-  DashboardSquare01Icon, 
-  Calendar01Icon, 
-  LicenseIcon, 
+import {
+  DashboardSquare01Icon,
+  Calendar01Icon,
+  LicenseIcon,
   UserCircleIcon,
   Notification01Icon
 } from '@hugeicons/core-free-icons';
@@ -19,12 +19,12 @@ function StudentLayout() {
   const location = useLocation();
 
   const navItems = [
-    { label: 'Home',     icon: DashboardSquare01Icon, to: '/student/dashboard' },
-    { label: 'Schedule', icon: Calendar01Icon,         to: '/student/schedule'  },
-    { label: 'Exams',    icon: LicenseIcon,            to: '/student/exams'     },
-    { label: 'Profile',  icon: UserCircleIcon,         to: '/student/profile'   },
+    { label: 'Home', icon: DashboardSquare01Icon, to: '/student/dashboard' },
+    { label: 'Schedule', icon: Calendar01Icon, to: '/student/schedule' },
+    { label: 'Exams', icon: LicenseIcon, to: '/student/exams' },
+    { label: 'Profile', icon: UserCircleIcon, to: '/student/profile' },
   ];
-
+  // helll o form rachid in code
   return (
     <div className="flex min-h-screen flex-col bg-background font-serif overflow-hidden">
       {/* Header */}
