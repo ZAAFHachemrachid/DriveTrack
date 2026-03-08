@@ -6,7 +6,24 @@ import viteTsConfigPaths from "vite-tsconfig-paths"
 import tailwindcss from "@tailwindcss/vite"
 import { nitro } from "nitro/vite"
 
+const host = process.env.TAURI_DEV_HOST
+
 const config = defineConfig({
+  server: {
+    host: host ?? "localhost",
+    port: 3000,
+    strictPort: true,
+    // Allow Tauri to access the dev server from the Android device
+    ...(host
+      ? {
+          hmr: {
+            protocol: "ws",
+            host,
+            port: 3001,
+          },
+        }
+      : {}),
+  },
   plugins: [
     devtools(),
     nitro(),
